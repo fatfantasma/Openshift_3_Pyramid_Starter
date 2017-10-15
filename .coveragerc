@@ -1,0 +1,3 @@
+[run]
+source = openshift_3_pyramid_starter
+omit = openshift_3_pyramid_starter/test*

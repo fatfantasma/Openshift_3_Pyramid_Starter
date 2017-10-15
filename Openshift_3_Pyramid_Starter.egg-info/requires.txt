@@ -1,0 +1,10 @@
+pyramid
+pyramid_chameleon
+pyramid_jinja2
+pyramid_debugtoolbar==3.0.4
+waitress
+
+[testing]
+WebTest >= 1.3.1
+pytest
+pytest-cov
