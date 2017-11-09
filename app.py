@@ -1,10 +1,12 @@
 #Openshift 3 entry point
 
 import os
+import logging
 
 from pyramid.paster import get_app
 from pyramid.paster import get_appsettings
 
+log = logging.getLogger(__name__)
 
 if __name__ == '__main__':
     here = os.path.dirname(os.path.abspath(__file__))
@@ -13,10 +15,14 @@ if __name__ == '__main__':
         ip = '0.0.0.0'
         port = 8080
         config = os.path.join(here, 'production.ini')
+        print("Starting on Openshift 3")
+        log.debug("Starting on Openshift 3")
     else:
         ip = '0.0.0.0'                                                              #localhost
         port = 6543
         config = os.path.join(here, 'development.ini')
+        print("Starting on Localhost")
+        log.debug("Starting on localhost")
 
     app = get_app(config, 'main')                                                   #find 'main' method in __init__.py.  That is our wsgi app
     settings = get_appsettings(config, 'main')                                      #don't really need this but is an example on how to get settings from the '.ini' files
