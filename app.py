@@ -24,6 +24,13 @@ if __name__ == '__main__':
         print("Starting on Localhost")
         log.debug("Starting on localhost")
 
+
+    print("")
+    print("ENVIRONMENT VARIABLES")
+    print("---------------------")
+    for env in os.environ:
+        print ("{} = {}".format(env, os.environ[env]))
+
     app = get_app(config, 'main')                                                   #find 'main' method in __init__.py.  That is our wsgi app
     settings = get_appsettings(config, 'main')                                      #don't really need this but is an example on how to get settings from the '.ini' files
 
